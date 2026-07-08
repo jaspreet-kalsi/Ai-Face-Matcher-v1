@@ -8,7 +8,8 @@ let modelsLoaded = false;
 export const loadModels = async () => {
   if (modelsLoaded) return;
   
-  const MODEL_URL = '/models';
+  // Use Vite's BASE_URL so it works on GitHub Pages subdirectories
+  const MODEL_URL = import.meta.env.BASE_URL + 'models';
   
   try {
     console.log("Loading face-api models...");
